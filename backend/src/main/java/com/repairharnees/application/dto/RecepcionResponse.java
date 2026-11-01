@@ -19,5 +19,6 @@ public class RecepcionResponse {
     private String equipoModelo;
     private String estado;
     private LocalDateTime fechaRecepcion;
+    private String observaciones;
     private String mensaje;
 }

@@ -1,5 +1,6 @@
 package com.repairharnees.api.controller;
 
+import com.repairharnees.application.dto.ActualizarOrdenRequest;
 import com.repairharnees.application.dto.RecepcionRequest;
 import com.repairharnees.application.dto.RecepcionResponse;
 import com.repairharnees.application.usecases.ActualizarOrdenUseCase;
@@ -64,9 +65,9 @@ public class RecepcionController {
     }
 
     @PutMapping("/ordenes/{codigoInterno}")
-    @Operation(summary = "Actualizar: modificar observaciones/datos de una orden")
+    @Operation(summary = "Actualizar: modificar observaciones y/o estado de una orden")
     public ResponseEntity<RecepcionResponse> actualizar(@PathVariable String codigoInterno,
-                                                       @Valid @RequestBody RecepcionRequest request) {
+                                                       @Valid @RequestBody ActualizarOrdenRequest request) {
         return ResponseEntity.ok(actualizarOrden.ejecutar(codigoInterno, request));
     }
 

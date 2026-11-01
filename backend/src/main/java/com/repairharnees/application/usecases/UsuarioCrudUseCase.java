@@ -24,6 +24,9 @@ public class UsuarioCrudUseCase {
 
     @Transactional
     public UsuarioDto crear(UsuarioDto dto) {
+        if (dto.getPassword() == null || dto.getPassword().isBlank()) {
+            throw new IllegalArgumentException("La password es obligatoria para crear un usuario");
+        }
         if (unitOfWork.usuarios().existsByUsername(dto.getUsername())) {
             throw new IllegalArgumentException("El username ya existe: " + dto.getUsername());
         }

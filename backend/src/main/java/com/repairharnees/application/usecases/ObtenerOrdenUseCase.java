@@ -32,6 +32,7 @@ public class ObtenerOrdenUseCase {
                 .equipoModelo(equipo != null ? equipo.getModelo() : "-")
                 .estado(orden.getEstado().name())
                 .fechaRecepcion(orden.getFechaRecepcion())
+                .observaciones(orden.getObservaciones())
                 .mensaje("OK")
                 .build();
     }

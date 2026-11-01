@@ -71,6 +71,7 @@ public class RegistrarRecepcionUseCase {
                 .equipoModelo(equipo.getModelo())
                 .estado(orden.getEstado().name())
                 .fechaRecepcion(orden.getFechaRecepcion())
+                .observaciones(orden.getObservaciones())
                 .mensaje("Recepcion registrada correctamente")
                 .build();
     }

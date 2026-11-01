@@ -21,9 +21,8 @@ public class UsuarioDto {
     @Size(max = 60)
     private String username;
 
-    @NotBlank
     @Size(min = 6, max = 100)
-    private String password; // solo para creacion
+    private String password; // obligatoria al crear; al actualizar, null = no cambiarla
 
     @NotBlank
     @Size(max = 120)
